@@ -1,0 +1,6 @@
+[init]
+  defaultBranch = main
+
+[user]
+  name = ${NAME}
+  email = ${EMAIL}
