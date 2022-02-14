@@ -16,8 +16,13 @@ resource "local_file" "public_key" {
 }
 
 resource "github_user_ssh_key" "public_key" {
-  count = var.op_connect ? 1 : 0
-
   key   = tls_private_key.this.public_key_openssh
-  title = format("%s@%s", data.external.info.result.user, data.external.info.result.host)
+  title = "$USERNAME@$HOSTNAME"
+}
+
+resource "shell_script" "gitlab_public_key" {
+  lifecycle_commands {
+    create = format("curl -X POST https://gitlab.com/api/v4/user/keys -F \"private_token=$GITLAB_TOKEN\" -F \"title=$USERNAME@$HOSTNAME\" -F \"key=%s\"", tls_private_key.this.public_key_openssh)
+    delete = ""
+  }
 }

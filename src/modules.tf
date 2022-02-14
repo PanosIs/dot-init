@@ -5,3 +5,7 @@ module "dnf" {
 module "binary" {
   source = "./binary"
 }
+
+module "keys" {
+  source = "./keys"
+}

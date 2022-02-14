@@ -13,7 +13,7 @@ resource "shell_script" "obsidian" {
 
   lifecycle_commands {
     create = file(format("${path.root}/scripts/install-%s.sh", each.value))
-    read   = "echo \"{\"path\": \"$(which obsidian)\"}\""
+    read   = "echo \"{}\""
     delete = "sudo rm $(which obsidian)"
   }
 
