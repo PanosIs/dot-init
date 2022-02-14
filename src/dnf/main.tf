@@ -17,7 +17,6 @@ locals {
     "docker-ce-cli", 
     "containerd.io",
     "1password",
-    "discord",
     "code"
   ]
 
