@@ -17,12 +17,12 @@ resource "local_file" "public_key" {
 
 resource "github_user_ssh_key" "public_key" {
   key   = tls_private_key.this.public_key_openssh
-  title = "$USERNAME@$HOSTNAME"
+  title = "pi@desktop"
 }
 
 resource "shell_script" "gitlab_public_key" {
   lifecycle_commands {
-    create = format("curl -X POST https://gitlab.com/api/v4/user/keys -F \"private_token=$GITLAB_TOKEN\" -F \"title=$USERNAME@$HOSTNAME\" -F \"key=%s\"", tls_private_key.this.public_key_openssh)
+    create = format("curl -X POST https://gitlab.com/api/v4/user/keys -F \"private_token=$GITLAB_TOKEN\" -F \"title=pi@desktop\" -F \"key=%s\"", tls_private_key.this.public_key_openssh)
     delete = ""
   }
 }
