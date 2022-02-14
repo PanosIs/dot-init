@@ -9,7 +9,7 @@ locals {
     "xclip",
     "zoxide",
     "nextcloud-client",
-    "persepolis"
+    "starship"
   ]
 
   dnf_external_packages = [

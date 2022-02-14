@@ -13,9 +13,3 @@ variable "name" {
   description = "Name to be used for Git configuration and key generation."
   type        = string
 }
-
-variable "interactive" {
-  default     = false
-  description = "Whether to take actions that require interactive sessions (Key generation, Passwords etc) or only non-interactive component setup."
-  type        = bool
-}
