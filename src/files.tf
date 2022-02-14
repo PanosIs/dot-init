@@ -2,7 +2,6 @@ locals {
   files = [
     ".bashrc",
     ".bash_aliases",
-    ".fzf.bash",
     ".config/starship.toml",
   ]
 }

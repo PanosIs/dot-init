@@ -1,7 +1,6 @@
 locals {
   dnf_packages = [
     "fd",
-    "fzf",
     "git",
     "glances",
     "htop",

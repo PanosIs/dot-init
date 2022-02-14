@@ -29,8 +29,6 @@ unset rc
 # Change default editor
 export EDITOR=micro
 
-# Init stuff
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Terminal setup
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd cd bash)"
@@ -39,5 +37,4 @@ source <(kubectl completion bash)
 
 # Load aliases from separate file
 . ~/.bash_aliases
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
